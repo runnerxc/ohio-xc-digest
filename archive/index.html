@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ohio XC digest archive</title>
+<style>
+:root {
+  --yellow: #FFD100;
+  --black: #111111;
+  --yellow-lt: #FFF6C2;
+  --white: #FFFFFF;
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #ececec;
+  color: var(--black);
+  font-family: Arial,Helvetica,sans-serif;
+}
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 0 24px rgba(0,0,0,.12);
+}
+.banner {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 22px 24px 18px;
+}
+.banner .kicker {
+  margin: 0 0 4px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.banner h1 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--yellow);
+}
+.banner .sub {
+  margin: 0;
+  font-size: 13px;
+  color: #ffffff;
+}
+.banner-nav {
+  margin: 12px 0 0;
+  font-size: 13px;
+}
+.banner-nav a {
+  color: var(--yellow);
+  text-decoration: none;
+  margin-right: 14px;
+  font-weight: 700;
+}
+.banner-nav a:hover {
+  text-decoration: underline;
+}
+.archive-list {
+  list-style: none;
+  padding: 18px 0 8px;
+  margin: 0;
+}
+.archive-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+.archive-list a {
+  color: var(--black);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+  font-size: 16px;
+}
+.archive-list a:hover {
+  background: var(--yellow);
+}
+.banner-stripe {
+  height: 6px;
+  background: var(--yellow);
+}
+.content {
+  padding: 8px 24px 56px;
+}
+.section-bar {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 10px 20px;
+  border-top: 3px solid var(--black);
+  border-bottom: 3px solid var(--black);
+  margin: 24px -24px 0;
+}
+.section-bar h2 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.subhead {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 8px 16px;
+  margin: 18px 0 0;
+}
+.subhead h3 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--yellow);
+}
+.note {
+  margin: 6px 4px 10px;
+  font-size: 12px;
+  color: #444;
+}
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 0 16px;
+}
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  color: var(--black);
+}
+table.data th {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 8px 10px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 1px 0 var(--black);
+}
+table.data th.num,
+table.data td.num {
+  text-align: right;
+}
+table.data td {
+  padding: 7px 10px;
+}
+table.data td.time {
+  font-weight: 700;
+}
+table.data tbody tr:nth-child(odd) {
+  background: var(--yellow-lt);
+}
+table.data tbody tr:nth-child(even) {
+  background: var(--white);
+}
+.meet-index {
+  list-style: none;
+  padding: 14px 0 8px;
+  margin: 0;
+  columns: 2;
+  column-gap: 28px;
+}
+.meet-index li {
+  padding: 4px 0;
+  break-inside: avoid;
+}
+.meet-index a {
+  color: var(--black);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+}
+.meet-index a:hover {
+  background: var(--yellow);
+}
+section.meet {
+  margin: 28px 0 8px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid #ddd;
+}
+section.meet > h2 {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 12px 16px;
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+.meet-meta {
+  margin: 0 4px 8px;
+  font-size: 13px;
+  color: #444;
+}
+.back {
+  font-size: 12px;
+  margin: 0 4px 14px;
+}
+.back a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid var(--yellow);
+}
+.back a:hover {
+  background: var(--yellow);
+}
+.race-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 16px 0 4px;
+  color: var(--black);
+}
+.results-link {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+.results-link a {
+  color: var(--black);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+}
+.results-link a:hover {
+  background: var(--yellow);
+}
+.muted {
+  color: #444;
+  font-size: 13px;
+  margin: 4px 0 10px;
+}
+.footer {
+  font-size: 11px;
+  color: #555;
+  padding: 18px 4px 0;
+}
+.empty {
+  margin: 12px 4px 16px;
+  font-size: 14px;
+  color: var(--black);
+}
+@media (max-width: 720px) {
+  .meet-index { columns: 1; }
+  .content, .banner { padding-left: 16px; padding-right: 16px; }
+  .section-bar { margin-left: -16px; margin-right: -16px; }
+}
+</style>
+</head>
+<body>
+<div class="page" id="top">
+<header class="banner">
+<p class="kicker">Ohio Cross Country</p>
+<h1>Ohio XC digest archive</h1>
+<p class="sub">Prior daily reports &nbsp;&middot;&nbsp; 2026 season</p>
+<nav class="banner-nav"><a href="/ohio-xc-digest/">Latest</a> | <a href="/ohio-xc-digest/archive/">Archive</a></nav>
+</header>
+<div class="banner-stripe"></div>
+<main class="content">
+<div class="section-bar"><h2>Daily reports</h2></div>
+<ul class="archive-list"><li><a href="/ohio-xc-digest/archive/2026-08-30.html">Sunday, August 30, 2026</a></li><li><a href="/ohio-xc-digest/archive/2026-08-29.html">Saturday, August 29, 2026</a></li></ul>
+<p class="footer"><a href="/ohio-xc-digest/">Latest digest</a></p>
+</main></div></body></html>

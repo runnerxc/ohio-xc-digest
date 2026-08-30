@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ohio XC Daily Digest — Saturday, August 29, 2026</title>
+<style>
+:root {
+  --yellow: #FFD100;
+  --black: #111111;
+  --yellow-lt: #FFF6C2;
+  --white: #FFFFFF;
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #ececec;
+  color: var(--black);
+  font-family: Arial,Helvetica,sans-serif;
+}
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 0 24px rgba(0,0,0,.12);
+}
+.banner {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 22px 24px 18px;
+}
+.banner .kicker {
+  margin: 0 0 4px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.banner h1 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--yellow);
+}
+.banner .sub {
+  margin: 0;
+  font-size: 13px;
+  color: #ffffff;
+}
+.banner-nav {
+  margin: 12px 0 0;
+  font-size: 13px;
+}
+.banner-nav a {
+  color: var(--yellow);
+  text-decoration: none;
+  margin-right: 14px;
+  font-weight: 700;
+}
+.banner-nav a:hover {
+  text-decoration: underline;
+}
+.archive-list {
+  list-style: none;
+  padding: 18px 0 8px;
+  margin: 0;
+}
+.archive-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+.archive-list a {
+  color: var(--black);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+  font-size: 16px;
+}
+.archive-list a:hover {
+  background: var(--yellow);
+}
+.banner-stripe {
+  height: 6px;
+  background: var(--yellow);
+}
+.content {
+  padding: 8px 24px 56px;
+}
+.section-bar {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 10px 20px;
+  border-top: 3px solid var(--black);
+  border-bottom: 3px solid var(--black);
+  margin: 24px -24px 0;
+}
+.section-bar h2 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.subhead {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 8px 16px;
+  margin: 18px 0 0;
+}
+.subhead h3 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--yellow);
+}
+.note {
+  margin: 6px 4px 10px;
+  font-size: 12px;
+  color: #444;
+}
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 0 16px;
+}
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  color: var(--black);
+}
+table.data th {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 8px 10px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 1px 0 var(--black);
+}
+table.data th.num,
+table.data td.num {
+  text-align: right;
+}
+table.data td {
+  padding: 7px 10px;
+}
+table.data td.time {
+  font-weight: 700;
+}
+table.data tbody tr:nth-child(odd) {
+  background: var(--yellow-lt);
+}
+table.data tbody tr:nth-child(even) {
+  background: var(--white);
+}
+.meet-index {
+  list-style: none;
+  padding: 14px 0 8px;
+  margin: 0;
+  columns: 2;
+  column-gap: 28px;
+}
+.meet-index li {
+  padding: 4px 0;
+  break-inside: avoid;
+}
+.meet-index a {
+  color: var(--black);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+}
+.meet-index a:hover {
+  background: var(--yellow);
+}
+section.meet {
+  margin: 28px 0 8px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid #ddd;
+}
+section.meet > h2 {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 12px 16px;
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+.meet-meta {
+  margin: 0 4px 8px;
+  font-size: 13px;
+  color: #444;
+}
+.back {
+  font-size: 12px;
+  margin: 0 4px 14px;
+}
+.back a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid var(--yellow);
+}
+.back a:hover {
+  background: var(--yellow);
+}
+.race-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 16px 0 4px;
+  color: var(--black);
+}
+.results-link {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+.results-link a {
+  color: var(--black);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+}
+.results-link a:hover {
+  background: var(--yellow);
+}
+.muted {
+  color: #444;
+  font-size: 13px;
+  margin: 4px 0 10px;
+}
+.footer {
+  font-size: 11px;
+  color: #555;
+  padding: 18px 4px 0;
+}
+.empty {
+  margin: 12px 4px 16px;
+  font-size: 14px;
+  color: var(--black);
+}
+@media (max-width: 720px) {
+  .meet-index { columns: 1; }
+  .content, .banner { padding-left: 16px; padding-right: 16px; }
+  .section-bar { margin-left: -16px; margin-right: -16px; }
+}
+</style>
+</head>
+<body>
+<div class="page" id="top">
+<header class="banner">
+<p class="kicker">Ohio Cross Country</p>
+<h1>Daily Digest</h1>
+<p class="sub">Saturday, August 29, 2026 &nbsp;&middot;&nbsp; 2026 season</p>
+<nav class="banner-nav"><a href="/ohio-xc-digest/">Latest</a> | <a href="/ohio-xc-digest/archive/">Archive</a></nav>
+</header>
+<div class="banner-stripe"></div>
+<main class="content">
+<div class="section-bar" id="statewide">
+<h2>Top 2026 Time in the State</h2>
+</div>
+<div class="subhead"><h3>HS Boys — 5k</h3></div><p class="note">6228 unique athletes with a valid 2026 time; top 25 shown.</p>
+<div class="table-wrap"><table class="data"><thead><tr><th class="num">#</th><th>Time</th><th>Athlete</th><th>School</th><th>Gr</th><th>Meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="time">15:13.3</td><td>Jackson Spitzer</td><td>Versailles</td><td>12</td><td>Bob Schul Invitational Aug 29</td></tr><tr><td class="num">2</td><td class="time">15:20.73</td><td>Joel Smelcer</td><td>Perkins</td><td>12</td><td>Seneca East Tiger Classic Aug 29</td></tr><tr><td class="num">3</td><td class="time">15:25.42</td><td>Vincent Campbell</td><td>Meadowbrook</td><td>SO</td><td>Claymont Mark Albaugh Early Bird Aug 29</td></tr><tr><td class="num">4</td><td class="time">15:26.07</td><td>Brice Fuller</td><td>Fairless</td><td>11</td><td>Pickerington North Classic Aug 29</td></tr><tr><td class="num">5</td><td class="time">15:27.15</td><td>Jack Steineman</td><td>North Catholic</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">6</td><td class="time">15:29.67</td><td>Nigel Wenger</td><td>Smithville</td><td>11</td><td>Seneca East Tiger Classic Aug 29</td></tr><tr><td class="num">7</td><td class="time">15:30.00</td><td>Benjamin McBride</td><td>Norwin</td><td>11</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">8</td><td class="time">15:33.91</td><td>Ian Res</td><td>West Geauga</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">9</td><td class="time">15:38.00</td><td>Ian Putnam</td><td>Portsmouth</td><td>12</td><td>Pickerington North Classic Aug 29</td></tr><tr><td class="num">10</td><td class="time">15:39.3</td><td>Russell Stine</td><td>Findlay</td><td>12</td><td>Norm Bray Invitational Aug 29</td></tr><tr><td class="num">11</td><td class="time">15:40.42</td><td>Gatik Hirwani</td><td>North Allegheny</td><td>10</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">12</td><td class="time">15:43.60</td><td>Alexander Barrett</td><td>Norwin</td><td>11</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">13</td><td class="time">15:45.98</td><td>Calvin Watson</td><td>Thom. Worthington</td><td>10</td><td>Big Walnut Eagle Twilight Aug 29</td></tr><tr><td class="num">14</td><td class="time">15:46.09</td><td>Declan Odonnell</td><td>Norwin</td><td>10</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">15</td><td class="time">15:46.40</td><td>Kam Skelton</td><td>Mercyhurst Prep</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">16</td><td class="time">15:46.89</td><td>Malaki Neilson</td><td>Sher. Fairview</td><td>12</td><td>Obie Mouser Defiance Early Bird Aug 29</td></tr><tr><td class="num">17</td><td class="time">15:47.72</td><td>John Brock</td><td>Woodridge</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">18</td><td class="time">15:48.05</td><td>Elijah Goodell</td><td>Wellston</td><td>12</td><td>Golden Rocket Invitational Aug 29</td></tr><tr><td class="num">19</td><td class="time">15:49.12</td><td>Landen Perdue</td><td>BELLAIRE</td><td>12</td><td>OVCCL Kick Off Aug 26</td></tr><tr><td class="num">20</td><td class="time">15:52.51</td><td>Austin Benedict</td><td>New Albany</td><td>11</td><td>Pickerington North Classic Aug 29</td></tr><tr><td class="num">21</td><td class="time">15:53.27</td><td>Carter Schaubert</td><td>Mentor</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">22</td><td class="time">15:53.81</td><td>Samuel Baker</td><td>Hoover</td><td>11</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">23</td><td class="time">15:54.09</td><td>Luca Novakovic</td><td>Northwest</td><td>SR</td><td>Claymont Mark Albaugh Early Bird Aug 29</td></tr><tr><td class="num">24</td><td class="time">15:54.54</td><td>Hoyt Rodenbaugh</td><td>Mifflin County</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">25</td><td class="time">15:54.64</td><td>Remington Griffiths</td><td>Woodridge</td><td>11</td><td>HOKA Night XC Showcase Aug 29</td></tr></tbody></table></div>
+<div class="subhead"><h3>HS Girls — 5k</h3></div><p class="note">4717 unique athletes with a valid 2026 time; top 25 shown.</p>
+<div class="table-wrap"><table class="data"><thead><tr><th class="num">#</th><th>Time</th><th>Athlete</th><th>School</th><th>Gr</th><th>Meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="time">17:38.52</td><td>Gwen Huddle</td><td>Napoleon</td><td>11</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">2</td><td class="time">17:42.75</td><td>Audrey Miller</td><td>Aurora</td><td>9</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">3</td><td class="time">17:46.40</td><td>Annalise Costin</td><td>Brecksville</td><td>11</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">4</td><td class="time">18:12.20</td><td>Maya Gonzalez</td><td>Bay</td><td>10</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">5</td><td class="time">18:14.7</td><td>Lexi Schultz</td><td>Perrysburg</td><td>11</td><td>Norm Bray Invitational Aug 29</td></tr><tr><td class="num">6</td><td class="time">18:16.57</td><td>Irelyn Johnson</td><td>Marlington</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">7</td><td class="time">18:16.89</td><td>Katrina Neal</td><td>Clear Fork</td><td></td><td>Kipp Kinn Invitational Aug 29</td></tr><tr><td class="num">8</td><td class="time">18:21.17</td><td>Makayla Martuccio</td><td>Tallmadge</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">9</td><td class="time">18:22.40</td><td>Beth Baker</td><td>Upper Arlington</td><td>10</td><td>Pickerington North Classic Aug 29</td></tr><tr><td class="num">10</td><td class="time">18:26.37</td><td>Hailey Long</td><td>Mars Area</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">11</td><td class="time">18:26.91</td><td>Kassadi Thompson</td><td>Cle. Heights</td><td>11</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">12</td><td class="time">18:33.4</td><td>Lillian (Lily) Kiser</td><td>Fremont Ross</td><td>10</td><td>Norm Bray Invitational Aug 29</td></tr><tr><td class="num">13</td><td class="time">18:34.14</td><td>Lucia Sveda</td><td>Green</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">14</td><td class="time">18:35.01</td><td>Mackenzie Kline</td><td>Hil. Davidson</td><td>12</td><td>Pickerington North Classic Aug 29</td></tr><tr><td class="num">15</td><td class="time">18:38.17</td><td>Kali Wallace</td><td>Claymont</td><td>SR</td><td>Claymont Mark Albaugh Early Bird Aug 29</td></tr><tr><td class="num">16</td><td class="time">18:39.38</td><td>Kaylee Ingratta</td><td>Copley</td><td>10</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">17</td><td class="time">18:41.17</td><td>Claire Jenkins</td><td>Aurora</td><td>10</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">18</td><td class="time">18:45.26</td><td>Olivia MAY</td><td>Nordonia</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">19</td><td class="time">18:46.22</td><td>Katherine Schuler</td><td>Med Highland</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">20</td><td class="time">18:46.32</td><td>Camryn Bruno</td><td>West Allegheny</td><td>10</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">21</td><td class="time">18:46.52</td><td>Kate Michael</td><td>Watkins Memorial</td><td>11</td><td>Big Walnut Eagle Twilight Aug 29</td></tr><tr><td class="num">22</td><td class="time">18:47.49</td><td>Caroline Valentino</td><td>Hathaway Brown</td><td>11</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">23</td><td class="time">18:48.26</td><td>Claire Loiudice</td><td>Fox Chapel</td><td>10</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">24</td><td class="time">18:50.94</td><td>Ellery Jepson</td><td>Olen. Orange</td><td>9</td><td>Pickerington North Classic Aug 29</td></tr><tr><td class="num">25</td><td class="time">18:54.68</td><td>Madelyn O&#x27;brien</td><td>Stow-Munroe Falls</td><td>12</td><td>HOKA Night XC Showcase Aug 29</td></tr></tbody></table></div>
+<div class="subhead"><h3>MS Boys — 2 mile / 3200m</h3></div><p class="note">3185 unique athletes with a valid 2026 time; top 25 shown.</p>
+<div class="table-wrap"><table class="data"><thead><tr><th class="num">#</th><th>Time</th><th>Athlete</th><th>School</th><th>Gr</th><th>Meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="time">10:31.0</td><td>Mason Kyler</td><td>Lima Shawnee</td><td>8</td><td>Blue Jay Invitational MS Aug 29</td></tr><tr><td class="num">2</td><td class="time">10:46.60</td><td>Judah Geletka</td><td>Agape Christian Academy</td><td>8</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">3</td><td class="time">10:49.6</td><td>Grant Schutt</td><td>Perrysburg</td><td>8</td><td>Celina Rotary Invitational MS Aug 29</td></tr><tr><td class="num">4</td><td class="time">10:50.25</td><td>James Burkett</td><td>Worthingway</td><td>7</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">5</td><td class="time">11:01.70</td><td>Brantley Kendeigh</td><td>No. Ridgeville</td><td>8</td><td>Keystone Icebreaker Aug 24</td></tr><tr><td class="num">6</td><td class="time">11:05.90</td><td>Jack Heitkamp</td><td>Olen. Berlin</td><td>8</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">7</td><td class="time">11:12.95</td><td>Blake Kessler</td><td>Fayette</td><td>8</td><td>Obie Mouser Defiance Early Bird MS Aug 29</td></tr><tr><td class="num">8</td><td class="time">11:13.40</td><td>Akiyas Hill</td><td>West Muskingum</td><td>8</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">9</td><td class="time">11:14.20</td><td>Liam Fullroth</td><td>Wes. Walnut Springs</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">10</td><td class="time">11:16.48</td><td>Liam Altman</td><td>Hicksville</td><td>7</td><td>Obie Mouser Defiance Early Bird MS Aug 29</td></tr><tr><td class="num">11</td><td class="time">11:19.0</td><td>Caizen Anders</td><td>West Liberty-Salem</td><td>8</td><td>Bob Schul Invitational MS Aug 29</td></tr><tr><td class="num">12</td><td class="time">11:19.73</td><td>Luke D&#x27;Silva</td><td>Wes. Walnut Springs</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">13</td><td class="time">11:21.44</td><td>Beckham Gramlich</td><td>North Canton MS</td><td>8</td><td>GlenOak Golden Eagle Invitational MS Aug 29</td></tr><tr><td class="num">14</td><td class="time">11:22.5</td><td>Wes Holliday</td><td>Van Wert</td><td>8</td><td>Celina Rotary Invitational MS Aug 29</td></tr><tr><td class="num">15</td><td class="time">11:22.8</td><td>Will Bleeke</td><td>Bellmont</td><td>8</td><td>Celina Rotary Invitational MS Aug 29</td></tr><tr><td class="num">16</td><td class="time">11:24.30</td><td>Zeke Klein</td><td>National Trail</td><td>7</td><td>Preble County Aug 24</td></tr><tr><td class="num">17</td><td class="time">11:24.7</td><td>Liam Erwin</td><td>Kettering</td><td>8</td><td>Bob Schul Invitational MS Aug 29</td></tr><tr><td class="num">18</td><td class="time">11:25.92</td><td>Seth Gal</td><td>Wadsworth MS</td><td>8</td><td>GlenOak Golden Eagle Invitational MS Aug 29</td></tr><tr><td class="num">19</td><td class="time">11:27.32</td><td>Kahnor Burkhard</td><td>Fayette</td><td>8</td><td>Obie Mouser Defiance Early Bird MS Aug 29</td></tr><tr><td class="num">20</td><td class="time">11:27.89</td><td>Eli Offers</td><td>Lan. General Sherman</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">21</td><td class="time">11:27.94</td><td>Luke D&#x27;Onofrio</td><td>Dub. Grizzell</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">22</td><td class="time">11:28.10</td><td>Will Baylis</td><td>Bexley</td><td>8</td><td>New Albany Eagles Invite Aug 24</td></tr><tr><td class="num">23</td><td class="time">11:29.88</td><td>Waylon Hilty</td><td>Hicksville</td><td>8</td><td>Obie Mouser Defiance Early Bird MS Aug 29</td></tr><tr><td class="num">24</td><td class="time">11:30.21</td><td>Bennett Cook</td><td>Granville</td><td>8</td><td>Newark Catholic Invitational MS Aug 29</td></tr><tr><td class="num">25</td><td class="time">11:31.02</td><td>Theo Madaras</td><td>Bowling Green</td><td></td><td>Lake Middle School CC Invitational Aug 25</td></tr></tbody></table></div>
+<div class="subhead"><h3>MS Girls — 2 mile / 3200m</h3></div><p class="note">2580 unique athletes with a valid 2026 time; top 25 shown.</p>
+<div class="table-wrap"><table class="data"><thead><tr><th class="num">#</th><th>Time</th><th>Athlete</th><th>School</th><th>Gr</th><th>Meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="time">11:32.78</td><td>Baylynn Bendik</td><td>Open Door Christian</td><td>8</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">2</td><td class="time">11:37.96</td><td>Samantha Williams</td><td>Beaver Local</td><td>7</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">3</td><td class="time">11:45.9</td><td>Leigha Nolan</td><td>Brunswick</td><td>7</td><td>Party at the Polo Fields MS Aug 29</td></tr><tr><td class="num">4</td><td class="time">11:46.41</td><td>Haven Viren</td><td>Dub. Grizzell</td><td>7</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">5</td><td class="time">11:52.77</td><td>Isabelle Jones</td><td>Morgan</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">6</td><td class="time">12:04.58</td><td>Brinn Waters</td><td>Cleveland Youth</td><td>8</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">7</td><td class="time">12:13.57</td><td>Trystt Rising</td><td>Keystone</td><td>8</td><td>Keystone Icebreaker Aug 24</td></tr><tr><td class="num">8</td><td class="time">12:18.7</td><td>Mayson James</td><td>Beavercreek Coy</td><td>7</td><td>Bob Schul Invitational MS Aug 29</td></tr><tr><td class="num">9</td><td class="time">12:23.52</td><td>Harper Jones</td><td>Morgan</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">10</td><td class="time">12:24.4</td><td>Nika Matthews</td><td>West Liberty-Salem</td><td>8</td><td>Bob Schul Invitational MS Aug 29</td></tr><tr><td class="num">11</td><td class="time">12:24.97</td><td>Ria Littrell</td><td>Pick. Lakeview</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">12</td><td class="time">12:27.3</td><td>Josie Reinoehl</td><td>Oakwood</td><td>8</td><td>Bob Schul Invitational MS Aug 29</td></tr><tr><td class="num">13</td><td class="time">12:27.35</td><td>Alexis Oberly</td><td>Minerva MS</td><td>8</td><td>GlenOak Golden Eagle Invitational MS Aug 29</td></tr><tr><td class="num">14</td><td class="time">12:27.80</td><td>Beatrice Fielding</td><td>Jefferson Area</td><td>7</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">15</td><td class="time">12:28.70</td><td>Kate Dorn</td><td>Bexley</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">16</td><td class="time">12:32.57</td><td>Ally Figula</td><td>Open Door Christian</td><td>8</td><td>Keystone Icebreaker Aug 24</td></tr><tr><td class="num">17</td><td class="time">12:33</td><td>Giana Dzura</td><td>Jefferson Area</td><td>7</td><td>War on the Shore Aug 24</td></tr><tr><td class="num">18</td><td class="time">12:33.47</td><td>Dylan MacIsaac</td><td>Grove City Area</td><td>8</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">19</td><td class="time">12:35.40</td><td>Ruby Swain</td><td>Gah. East</td><td>7</td><td>New Albany Eagles Invite Aug 24</td></tr><tr><td class="num">20</td><td class="time">12:36.39</td><td>Hannah Thurston</td><td>New Albany</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">21</td><td class="time">12:38.18</td><td>Lucy Ranly</td><td>Jonathan Alder</td><td>8</td><td>Baron Blast - Buckeye Valley Aug 29</td></tr><tr><td class="num">22</td><td class="time">12:39.36</td><td>Delaney Gibson</td><td>Worthingway</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr><tr><td class="num">23</td><td class="time">12:39.80</td><td>Emmalin Stacy</td><td>Gah. East</td><td>8</td><td>New Albany Eagles Invite Aug 24</td></tr><tr><td class="num">24</td><td class="time">12:40.36</td><td>Tatum Weber</td><td>Olen. Berlin</td><td>8</td><td>HOKA Night XC Showcase Aug 29</td></tr><tr><td class="num">25</td><td class="time">12:42.17</td><td>Emma Becker</td><td>Worthingway</td><td>8</td><td>Pickerington North Classic MS Aug 29</td></tr></tbody></table></div>
+<div class="section-bar" id="meet-index"><h2>Friday, August 28 meets</h2></div>
+<p class="empty">No meets with results in the database for yesterday.</p>
+<p class="footer">2026 season only. HS lists are 5k; MS lists are 2 mile / 3200m. Data as of 12:08 PM EDT, Saturday, August 29, 2026.</p>
+</main></div></body></html>
