@@ -45,58 +45,81 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 :root {
-  --lime: #C6FF00;
-  --black: #0A0A0A;
-  --pink: #FF3D7F;
-  --ink: #f4f4f4;
-  --muted: #9aa08c;
-  --panel: #11150a;
-  --line: #2a3308;
+  --navy: #0a192f;
+  --navy-deep: #051020;
+  --cream: #fdf5e6;
+  --gold: #ffd700;
+  --bronze: #b8860b;
+  --ink: #fdf5e6;
+  --muted: #9aabbf;
+  --panel: #12243d;
+  --line: #2a4060;
 }
 * { box-sizing: border-box; }
 html { font-size: 15px; }
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--black);
+  background: var(--navy-deep);
   font-family: Oswald, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.25;
 }
-a { color: var(--lime); }
+a { color: var(--gold); }
 .sheet {
   max-width: 1040px;
   margin: 0 auto;
   padding: 14px 16px 28px;
+  background: var(--navy);
 }
 .wordmark {
   display: grid;
-  grid-template-columns: 72px 1fr auto;
-  gap: 12px;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
   align-items: center;
+}
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.logo {
+  display: block;
+  height: 88px;
+  width: auto;
+  max-width: 340px;
+}
+.logo-fallback {
+  margin: 0;
+  line-height: 0.78;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.logo-fallback .w-run {
+  display: block;
+  color: var(--cream);
+  font-size: 28px;
+  letter-spacing: 0.18em;
+}
+.logo-fallback .w-aura {
+  display: block;
+  color: var(--gold);
+  font-size: 48px;
+  letter-spacing: 0.06em;
+  background: linear-gradient(180deg, #ffe566 0%, #ffd700 45%, #b8860b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .runner {
   width: 72px;
   height: 88px;
-  filter: drop-shadow(0 0 10px #C6FF00);
-}
-.wordmark h1 {
-  margin: 0;
-  line-height: 0.82;
-  font-size: clamp(42px, 8vw, 72px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.w-run { color: #fff; font-family: Oswald, sans-serif; }
-.w-aura {
-  font-family: "Permanent Marker", Oswald, cursive;
-  color: var(--lime);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  text-shadow: 0 0 18px rgba(198,255,0,0.45);
+  filter: drop-shadow(0 0 8px rgba(255,215,0,0.25));
 }
 .tagline {
-  margin: 6px 0 0;
-  color: #fff;
+  margin: 0;
+  color: var(--cream);
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -109,26 +132,26 @@ a { color: var(--lime); }
 .issue-num {
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: var(--cream);
   letter-spacing: 0.06em;
 }
 .issue-date {
-  color: var(--lime);
+  color: var(--gold);
   font-size: 13px;
   letter-spacing: 0.08em;
   font-weight: 600;
 }
 .issue-meta {
   margin-top: 6px;
-  color: #cfd6c0;
+  color: var(--muted);
   font-size: 9px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 .ticker {
   margin: 10px 0 12px;
-  background: var(--lime);
-  color: #111;
+  background: linear-gradient(90deg, #b8860b, #ffd700);
+  color: #051020;
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -147,25 +170,26 @@ a { color: var(--lime); }
 }
 .max-aura {
   background: var(--panel);
-  border: 1px solid var(--lime);
+  border: 1px solid var(--gold);
   padding: 12px 14px 14px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 24px rgba(198,255,0,0.08);
+  box-shadow: 0 0 24px rgba(184,134,11,0.18);
 }
 .max-kicker {
   font-size: 10px;
   letter-spacing: 0.2em;
-  color: #fff;
+  color: var(--cream);
   margin: 0;
 }
 .max-title {
-  font-family: "Permanent Marker", Oswald, cursive;
-  color: var(--lime);
+  font-family: Oswald, sans-serif;
+  font-style: italic;
+  color: var(--gold);
   font-size: clamp(36px, 6vw, 56px);
   line-height: 0.85;
   margin: 0 0 8px;
-  text-shadow: 0 0 16px rgba(198,255,0,0.35);
+  text-transform: uppercase;
 }
 .max-body {
   display: grid;
@@ -175,10 +199,10 @@ a { color: var(--lime); }
 }
 .glow-card {
   height: 132px;
-  border: 2px solid var(--lime);
+  border: 2px solid var(--gold);
   background:
-    radial-gradient(circle at 50% 40%, rgba(198,255,0,0.28), transparent 62%),
-    #050505;
+    radial-gradient(circle at 50% 40%, rgba(255,215,0,0.22), transparent 62%),
+    #051020;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,10 +214,11 @@ a { color: var(--lime); }
   font-weight: 700;
   text-transform: uppercase;
   line-height: 0.95;
+  color: var(--cream);
 }
 .max-copy .school {
   margin: 4px 0 6px;
-  color: var(--lime);
+  color: var(--gold);
   font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -203,10 +228,11 @@ a { color: var(--lime); }
   font-size: clamp(34px, 5vw, 48px);
   font-weight: 700;
   line-height: 0.9;
+  color: var(--cream);
 }
 .max-copy .drop {
   margin: 6px 0 0;
-  color: #dfe6d0;
+  color: #d5deea;
   letter-spacing: 0.08em;
   font-size: 12px;
   text-transform: uppercase;
@@ -214,48 +240,49 @@ a { color: var(--lime); }
 .shield {
   width: 118px;
   min-height: 132px;
-  border: 2px solid #fff;
+  border: 2px solid var(--gold);
   clip-path: polygon(8% 0, 92% 0, 100% 18%, 100% 72%, 50% 100%, 0 72%, 0 18%);
-  background: #000;
+  background: #051020;
   text-align: center;
   padding: 16px 6px 22px;
 }
 .shield .lab {
   font-size: 8px;
   letter-spacing: 0.16em;
-  color: #fff;
+  color: var(--cream);
 }
 .aura-score {
   font-size: 36px;
   font-weight: 700;
-  color: var(--lime);
+  color: var(--gold);
   line-height: 1;
   margin: 4px 0 2px;
 }
-.stars { color: var(--lime); font-size: 11px; letter-spacing: 1px; }
+.stars { color: var(--gold); font-size: 11px; letter-spacing: 1px; }
 .side {
   background: var(--panel);
-  border: 1px solid var(--lime);
+  border: 1px solid var(--gold);
   padding: 10px 10px 12px;
 }
 .side h2, .block h2, .boards h2 {
   margin: 0 0 8px;
-  color: var(--lime);
+  color: var(--gold);
   font-size: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  font-style: italic;
 }
 .side h3, .boards h3 {
   margin: 6px 0 2px;
-  color: #fff;
+  color: var(--cream);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--lime);
+  border-bottom: 1px solid var(--gold);
   padding-bottom: 2px;
 }
-.side h3.girls { color: #ff8fb5; border-color: #ff8fb5; }
-.side h3.boys { color: #7ec8ff; border-color: #7ec8ff; }
+.side h3.girls { color: #e8d5a3; border-color: #b8860b; }
+.side h3.boys { color: var(--cream); border-color: var(--gold); }
 table {
   width: 100%;
   border-collapse: collapse;
@@ -267,7 +294,7 @@ th, td {
   border-bottom: 1px solid var(--line);
   vertical-align: top;
 }
-th { color: var(--lime); font-weight: 600; }
+th { color: var(--gold); font-weight: 600; }
 .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .earned {
   margin-top: 12px;
@@ -279,10 +306,12 @@ th { color: var(--lime); font-weight: 600; }
   font-size: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--cream);
 }
 .earned h2 .hi {
-  font-family: "Permanent Marker", Oswald, cursive;
-  color: var(--lime);
+  font-family: Oswald, sans-serif;
+  font-style: italic;
+  color: var(--gold);
   font-size: 22px;
   letter-spacing: 0;
   margin-right: 8px;
@@ -293,15 +322,15 @@ th { color: var(--lime); font-weight: 600; }
   gap: 8px;
 }
 .earn-card {
-  border: 1px solid var(--lime);
-  background: #080808;
+  border: 1px solid var(--gold);
+  background: #051020;
   min-height: 128px;
   break-inside: avoid;
   page-break-inside: avoid;
 }
 .earn-badge {
-  background: var(--lime);
-  color: #111;
+  background: linear-gradient(90deg, #b8860b, #ffd700);
+  color: #051020;
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.06em;
@@ -312,7 +341,7 @@ th { color: var(--lime); font-weight: 600; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 60%, rgba(198,255,0,0.2), transparent 70%);
+  background: radial-gradient(circle at 50% 60%, rgba(255,215,0,0.16), transparent 70%);
 }
 .earn-sil .runner { width: 36px; height: 44px; }
 .earn-card .nm {
@@ -321,10 +350,11 @@ th { color: var(--lime); font-weight: 600; }
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.05;
+  color: var(--cream);
 }
 .earn-card .sch {
   margin: 2px 6px 0;
-  color: var(--lime);
+  color: var(--gold);
   font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -332,7 +362,7 @@ th { color: var(--lime); font-weight: 600; }
 .earn-card .stat {
   margin: 4px 6px 8px;
   font-size: 10px;
-  color: #d5dcc8;
+  color: #c5d0de;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -345,15 +375,15 @@ th { color: var(--lime); font-weight: 600; }
   page-break-inside: avoid;
 }
 .block {
-  border: 1px solid var(--lime);
+  border: 1px solid var(--gold);
   background: var(--panel);
   padding: 10px;
   min-height: 160px;
 }
 .block.minus {
-  border-color: var(--pink);
+  border-color: var(--bronze);
 }
-.block.minus h2 { color: var(--pink); }
+.block.minus h2 { color: var(--bronze); }
 .list-row {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -363,7 +393,7 @@ th { color: var(--lime); font-weight: 600; }
   font-size: 12px;
 }
 .list-row .sub { color: var(--muted); font-size: 10px; letter-spacing: 0.04em; }
-.list-row .val { color: var(--lime); font-weight: 700; white-space: nowrap; }
+.list-row .val { color: var(--gold); font-weight: 700; white-space: nowrap; }
 .list-row.tight { padding: 2px 0; font-size: 11px; }
 .nums {
   display: grid;
@@ -372,7 +402,7 @@ th { color: var(--lime); font-weight: 600; }
   margin-bottom: 8px;
 }
 .numbox {
-  border: 1px solid var(--lime);
+  border: 1px solid var(--gold);
   padding: 8px 8px 6px;
   text-align: center;
 }
@@ -381,6 +411,7 @@ th { color: var(--lime); font-weight: 600; }
   font-size: 28px;
   font-weight: 700;
   line-height: 1;
+  color: var(--cream);
 }
 .numbox .l {
   display: block;
@@ -388,11 +419,11 @@ th { color: var(--lime); font-weight: 600; }
   font-size: 9px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #d7deca;
+  color: #c5d0de;
 }
 .moment {
   font-size: 12px;
-  color: #f3d0dc;
+  color: #ead7a6;
   margin: 0 0 6px;
 }
 .brand-foot {
@@ -405,16 +436,23 @@ th { color: var(--lime); font-weight: 600; }
   font-size: clamp(16px, 2.6vw, 22px);
   letter-spacing: 0.08em;
   font-weight: 500;
+  color: var(--cream);
 }
 .cta {
   margin: 8px 0 6px;
-  font-family: "Permanent Marker", Oswald, cursive;
+  font-family: Oswald, sans-serif;
+  font-style: italic;
   font-size: clamp(28px, 5vw, 42px);
   line-height: 0.9;
-  color: var(--lime);
-  text-shadow: 0 0 16px rgba(198,255,0,0.35);
+  color: var(--gold);
+  text-transform: uppercase;
 }
-.cta .pink { color: var(--pink); }
+.cta .accent {
+  background: linear-gradient(180deg, #ffe566 0%, #ffd700 50%, #b8860b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 .fine {
   color: var(--muted);
   font-size: 10px;
@@ -431,7 +469,7 @@ th { color: var(--lime); font-weight: 600; }
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
-.lede { font-size: 13px; color: #d7deca; margin: 0 0 10px; }
+.lede { font-size: 13px; color: #c5d0de; margin: 0 0 10px; }
 .note { color: var(--muted); font-size: 11px; margin: 6px 0 0; }
 .cards {
   display: grid;
@@ -441,13 +479,13 @@ th { color: var(--lime); font-weight: 600; }
 .aura-card {
   display: grid;
   grid-template-columns: 88px 1fr;
-  border: 1px solid var(--lime);
-  background: #080808;
+  border: 1px solid var(--gold);
+  background: #051020;
 }
 .aura-card.hero { grid-column: 1 / -1; grid-template-columns: 110px 1fr; }
 .aura-meter {
-  background: var(--lime);
-  color: #111;
+  background: linear-gradient(180deg, #ffd700, #b8860b);
+  color: #051020;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -455,19 +493,19 @@ th { color: var(--lime); font-weight: 600; }
   padding: 8px 4px;
 }
 .aura-label { font-size: 8px; letter-spacing: 0.12em; font-weight: 700; }
-.aura-meter .aura-score { color: #111; font-size: 28px; }
+.aura-meter .aura-score { color: #051020; font-size: 28px; }
 .flames { font-size: 11px; }
 .aura-body { padding: 8px 10px; }
 .aura-body .hed {
   margin: 0 0 4px;
-  color: var(--lime);
+  color: var(--gold);
   font-size: 13px;
   text-transform: uppercase;
 }
-.who { margin: 0; }
-.mark { margin: 3px 0 0; color: #c9d0bc; font-size: 11px; }
+.who { margin: 0; color: var(--cream); }
+.mark { margin: 3px 0 0; color: #c5d0de; font-size: 11px; }
 .download {
-  border: 1px solid var(--lime);
+  border: 1px solid var(--gold);
   padding: 8px 10px;
   margin: 10px 0;
 }
@@ -484,13 +522,14 @@ th { color: var(--lime); font-weight: 600; }
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  .sheet { max-width: none; padding: 0; }
+  body { background: #051020; }
+  .sheet { max-width: none; padding: 0; background: #0a192f; }
   a { text-decoration: none; }
   .earned-row { grid-template-columns: repeat(5, 1fr); }
   .poster-grid { grid-template-columns: 1.55fr 0.95fr; }
   .max-body { grid-template-columns: 118px 1fr 96px; }
   .bottom-grid { grid-template-columns: 1fr 1fr 1fr; }
-  .wordmark h1 { font-size: 54px; }
+  .logo { height: 78px; }
   .max-title { font-size: 40px; }
   .side { font-size: 10px; }
   .fine { font-size: 8px; }
@@ -500,9 +539,8 @@ th { color: var(--lime); font-weight: 600; }
 <body>
 <div class="sheet">
   <header class="wordmark">
-    <svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#C6FF00" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg>
-    <div>
-      <h1><span class="w-run">RUNNING</span> <span class="w-aura">AURA</span></h1>
+    <div class="brand-lockup">
+      <img class="logo" src="data:image/png;base64,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" alt="RUNNING AURA">
       <p class="tagline">THE WEEKLY PULSE OF OHIO CROSS COUNTRY</p>
     </div>
     <div class="issue-box">
@@ -515,17 +553,17 @@ th { color: var(--lime); font-weight: 600; }
     <span>VIRTUAL MEET WEEK 2 · ALL DIVISIONS · ALL RESULTS · ALL OHIO</span>
     <span class="catch">RUN FAST. BE KIND. EARN AURA.</span>
   </div>
-  <div class="poster-grid"><section class="max-aura" id="plus-1000"><p class="max-kicker">PERFORMANCE OF THE WEEK</p><h2 class="max-title">MAX AURA</h2><div class="max-body"><div class="glow-card"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#C6FF00" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><div class="max-copy"><p class="who">Ryne Reynolds</p><p class="school">Little Miami · D1 Boys</p><p class="time">15:03.5</p><p class="drop">FIRST 5K THIS SEASON · Buckeye Running Sunset Invitational HS (Aug 29)</p></div><div class="shield"><div class="lab">AURA RATING</div><div class="aura-score">750</div><div class="stars">★★★★☆</div></div></div></section><aside class="side" id="rankings"><h2>VIRTUAL MEET STANDINGS</h2><h3>D1 BOYS · 5 SCORE</h3><table><thead><tr><th>Pl</th><th>School</th><th>Score</th></tr></thead><tbody><tr><td class="num">1</td><td>Mentor</td><td class="num">126</td></tr><tr><td class="num">2</td><td>Gah. Lincoln</td><td class="num">157</td></tr><tr><td class="num">3</td><td>Mason</td><td class="num">168</td></tr></tbody></table><h3>D1 GIRLS · 5 SCORE</h3><table><thead><tr><th>Pl</th><th>School</th><th>Score</th></tr></thead><tbody><tr><td class="num">1</td><td>Upper Arlington</td><td class="num">165</td></tr><tr><td class="num">2</td><td>Oak Hills</td><td class="num">222</td></tr><tr><td class="num">3</td><td>Centerville</td><td class="num">245</td></tr></tbody></table><h3>#1 BY DIVISION</h3><div class="list-row tight"><div>D2 Boys · <strong>Hoover</strong></div><div class="val">296</div></div><div class="list-row tight"><div>D2 Girls · <strong>Aurora</strong></div><div class="val">209</div></div><div class="list-row tight"><div>D3 Boys · <strong>Woodridge</strong></div><div class="val">126</div></div><div class="list-row tight"><div>D3 Girls · <strong>Huron</strong></div><div class="val">129</div></div><div class="list-row tight"><div>D4 Boys · <strong>Tinora</strong></div><div class="val">107</div></div><div class="list-row tight"><div>D4 Girls · <strong>Liberty Center</strong></div><div class="val">207</div></div><h3 class="boys">BOYS 5K</h3><table><thead><tr><th></th><th>Name</th><th>5k</th></tr></thead><tbody><tr><td class="num">1</td><td>Ryne Reynolds<div class='sub'>Little Miami</div></td><td class="num">15:03.5</td></tr><tr><td class="num">2</td><td>Jackson Spitzer<div class='sub'>Versailles</div></td><td class="num">15:13.3</td></tr><tr><td class="num">3</td><td>Joel Smelcer<div class='sub'>Perkins</div></td><td class="num">15:20.73</td></tr></tbody></table><h3 class="girls">GIRLS 5K</h3><table><thead><tr><th></th><th>Name</th><th>5k</th></tr></thead><tbody><tr><td class="num">1</td><td>Gwen Huddle<div class='sub'>Napoleon</div></td><td class="num">17:38.52</td></tr><tr><td class="num">2</td><td>Audrey Miller<div class='sub'>Aurora</div></td><td class="num">17:42.75</td></tr><tr><td class="num">3</td><td>Annalise Costin<div class='sub'>Brecksville</div></td><td class="num">17:46.40</td></tr></tbody></table><p class="note">Scored virtual meet: five score, 6th–7th displace. Not a top-7 average.</p></aside></div><section class="earned" id="running-aura"><h2><span class="hi">RUNNING AURA</span> ATHLETES WHO EARNED IT THIS WEEK</h2><div class="earned-row"><article class="earn-card"><div class="earn-badge">+750 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#C6FF00" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Jackson Spitzer</p><p class="sch">Versailles</p><p class="stat">15:13.3 · FIRST 5K THIS SEASON</p></article><article class="earn-card"><div class="earn-badge">+748 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#C6FF00" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Joel Smelcer</p><p class="sch">Perkins</p><p class="stat">15:20.73 · FIRST 5K THIS SEASON</p></article><article class="earn-card"><div class="earn-badge">+750 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#C6FF00" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Bennett Lehman</p><p class="sch">Ansonia</p><p class="stat">15:22.1 · FIRST 5K THIS SEASON</p></article><article class="earn-card"><div class="earn-badge">+746 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#C6FF00" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Vincent Campbell</p><p class="sch">Meadowbrook</p><p class="stat">15:25.42 · FIRST 5K THIS SEASON</p></article><article class="earn-card"><div class="earn-badge">+745 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#C6FF00" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Brice Fuller</p><p class="sch">Fairless</p><p class="stat">15:26.07 · FIRST 5K THIS SEASON</p></article></div></section><div class="bottom-grid"><section class="block" id="aura-rising"><h2>▲ AURA RISING</h2><div class="list-row"><div><strong>Marlee Beacom</strong><div class='sub'>Ash. St. John · 19:32.17</div></div><div class="val">−1:46.83</div></div><div class="list-row"><div><strong>Emma Phillips</strong><div class='sub'>Ash. St. John · 20:00.86</div></div><div class="val">−1:27.14</div></div><div class="list-row"><div><strong>Ethan VanNorman</strong><div class='sub'>Conneaut · 16:33.69</div></div><div class="val">−1:20.31</div></div><div class="list-row"><div><strong>Sam Steimle</strong><div class='sub'>Grand Valley · 15:59.77</div></div><div class="val">−1:16.23</div></div><div class="list-row"><div><strong>Mickenzie White</strong><div class='sub'>Cardington-Lincoln · 19:59.46</div></div><div class="val">−1:15.82</div></div></section><section class="block" id="on-our-radar"><h2>◎ ON OUR RADAR</h2><div class="list-row"><div><strong>Ryne Reynolds</strong><div class='sub'>first 5k this season · Little Miami</div></div><div class="val">15:03.5</div></div><div class="list-row"><div><strong>Ian Patrick</strong><div class='sub'>first 5k this season · Little Miami</div></div><div class="val">15:30.1</div></div><div class="list-row"><div><strong>Calvin Watson</strong><div class='sub'>Sophomore · first 5k this season · Thom. Worthington</div></div><div class="val">15:45.98</div></div><div class="list-row"><div><strong>Austin Benedict</strong><div class='sub'>first 5k this season · New Albany</div></div><div class="val">15:52.51</div></div><div class="list-row"><div><strong>Carter Schaubert</strong><div class='sub'>first 5k this season · Mentor</div></div><div class="val">15:53.27</div></div><div class="list-row"><div><strong>Thomas Moran</strong><div class='sub'>Sophomore · first 5k this season · Mason</div></div><div class="val">15:55.1</div></div></section><section class="block minus" id="by-the-numbers"><div id="minus-aura"><h2>BY THE NUMBERS</h2><div class="nums"><div class="numbox"><span class="n">13325</span><span class="l">athletes this 2026 season</span></div><div class="numbox"><span class="n">30</span><span class="l">2026 meets this week</span></div><div class="numbox"><span class="n">695</span><span class="l">HS schools</span></div><div class="numbox"><span class="n">43</span><span class="l">sub-16 5ks this season</span></div></div><p class="note">43 girls under 19:00 this season · 39 2026 meets.</p><h2>☁ AURA MOMENTS</h2><p class="moment"><strong>Willard Early Bird</strong> (Aug 25) — Boys HS times provisional (host said times ran fast / time corrections in process).</p></div></section></div>
+  <div class="poster-grid"><section class="max-aura" id="plus-1000"><p class="max-kicker">PERFORMANCE OF THE WEEK</p><h2 class="max-title">MAX AURA</h2><div class="max-body"><div class="glow-card"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fdf5e6" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><div class="max-copy"><p class="who">Ryne Reynolds</p><p class="school">Little Miami · D1 Boys</p><p class="time">15:03.5</p><p class="drop">FIRST 5K THIS SEASON · Buckeye Running Sunset Invitational HS (Aug 29)</p></div><div class="shield"><div class="lab">AURA RATING</div><div class="aura-score">750</div><div class="stars">★★★★☆</div></div></div></section><aside class="side" id="rankings"><h2>VIRTUAL MEET STANDINGS</h2><h3>D1 BOYS · 5 SCORE</h3><table><thead><tr><th>Pl</th><th>School</th><th>Score</th></tr></thead><tbody><tr><td class="num">1</td><td>Mentor</td><td class="num">126</td></tr><tr><td class="num">2</td><td>Gah. Lincoln</td><td class="num">157</td></tr><tr><td class="num">3</td><td>Mason</td><td class="num">168</td></tr></tbody></table><h3>D1 GIRLS · 5 SCORE</h3><table><thead><tr><th>Pl</th><th>School</th><th>Score</th></tr></thead><tbody><tr><td class="num">1</td><td>Upper Arlington</td><td class="num">165</td></tr><tr><td class="num">2</td><td>Oak Hills</td><td class="num">222</td></tr><tr><td class="num">3</td><td>Centerville</td><td class="num">245</td></tr></tbody></table><h3>#1 BY DIVISION</h3><div class="list-row tight"><div>D2 Boys · <strong>Hoover</strong></div><div class="val">296</div></div><div class="list-row tight"><div>D2 Girls · <strong>Aurora</strong></div><div class="val">209</div></div><div class="list-row tight"><div>D3 Boys · <strong>Woodridge</strong></div><div class="val">126</div></div><div class="list-row tight"><div>D3 Girls · <strong>Huron</strong></div><div class="val">129</div></div><div class="list-row tight"><div>D4 Boys · <strong>Tinora</strong></div><div class="val">107</div></div><div class="list-row tight"><div>D4 Girls · <strong>Liberty Center</strong></div><div class="val">207</div></div><h3 class="boys">BOYS 5K</h3><table><thead><tr><th></th><th>Name</th><th>5k</th></tr></thead><tbody><tr><td class="num">1</td><td>Ryne Reynolds<div class='sub'>Little Miami</div></td><td class="num">15:03.5</td></tr><tr><td class="num">2</td><td>Jackson Spitzer<div class='sub'>Versailles</div></td><td class="num">15:13.3</td></tr><tr><td class="num">3</td><td>Joel Smelcer<div class='sub'>Perkins</div></td><td class="num">15:20.73</td></tr></tbody></table><h3 class="girls">GIRLS 5K</h3><table><thead><tr><th></th><th>Name</th><th>5k</th></tr></thead><tbody><tr><td class="num">1</td><td>Gwen Huddle<div class='sub'>Napoleon</div></td><td class="num">17:38.52</td></tr><tr><td class="num">2</td><td>Audrey Miller<div class='sub'>Aurora</div></td><td class="num">17:42.75</td></tr><tr><td class="num">3</td><td>Annalise Costin<div class='sub'>Brecksville</div></td><td class="num">17:46.40</td></tr></tbody></table><p class="note">Scored virtual meet: five score, 6th–7th displace. Not a top-7 average.</p></aside></div><section class="earned" id="running-aura"><h2><span class="hi">RUNNING AURA</span> ATHLETES WHO EARNED IT THIS WEEK</h2><div class="earned-row"><article class="earn-card"><div class="earn-badge">+750 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fdf5e6" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Jackson Spitzer</p><p class="sch">Versailles</p><p class="stat">15:13.3 · FIRST 5K THIS SEASON</p></article><article class="earn-card"><div class="earn-badge">+748 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fdf5e6" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Joel Smelcer</p><p class="sch">Perkins</p><p class="stat">15:20.73 · FIRST 5K THIS SEASON</p></article><article class="earn-card"><div class="earn-badge">+750 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fdf5e6" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Bennett Lehman</p><p class="sch">Ansonia</p><p class="stat">15:22.1 · FIRST 5K THIS SEASON</p></article><article class="earn-card"><div class="earn-badge">+746 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fdf5e6" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Vincent Campbell</p><p class="sch">Meadowbrook</p><p class="stat">15:25.42 · FIRST 5K THIS SEASON</p></article><article class="earn-card"><div class="earn-badge">+745 AURA</div><div class="earn-sil"><svg class="runner" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fdf5e6" d="M47 7.5a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM20 37.5 29 32l7 13 12-9c5-3 11-2 17 3l7 6-4.5 6-8-5.5-14 8 13 24-8.5 4-9.5-19-8 20-8-3.5 10-21-13.5-10z"/></svg></div><p class="nm">Brice Fuller</p><p class="sch">Fairless</p><p class="stat">15:26.07 · FIRST 5K THIS SEASON</p></article></div></section><div class="bottom-grid"><section class="block" id="aura-rising"><h2>▲ AURA RISING</h2><div class="list-row"><div><strong>Marlee Beacom</strong><div class='sub'>Ash. St. John · 19:32.17</div></div><div class="val">−1:46.83</div></div><div class="list-row"><div><strong>Emma Phillips</strong><div class='sub'>Ash. St. John · 20:00.86</div></div><div class="val">−1:27.14</div></div><div class="list-row"><div><strong>Ethan VanNorman</strong><div class='sub'>Conneaut · 16:33.69</div></div><div class="val">−1:20.31</div></div><div class="list-row"><div><strong>Sam Steimle</strong><div class='sub'>Grand Valley · 15:59.77</div></div><div class="val">−1:16.23</div></div><div class="list-row"><div><strong>Mickenzie White</strong><div class='sub'>Cardington-Lincoln · 19:59.46</div></div><div class="val">−1:15.82</div></div></section><section class="block" id="on-our-radar"><h2>◎ ON OUR RADAR</h2><div class="list-row"><div><strong>Ryne Reynolds</strong><div class='sub'>first 5k this season · Little Miami</div></div><div class="val">15:03.5</div></div><div class="list-row"><div><strong>Ian Patrick</strong><div class='sub'>first 5k this season · Little Miami</div></div><div class="val">15:30.1</div></div><div class="list-row"><div><strong>Calvin Watson</strong><div class='sub'>Sophomore · first 5k this season · Thom. Worthington</div></div><div class="val">15:45.98</div></div><div class="list-row"><div><strong>Austin Benedict</strong><div class='sub'>first 5k this season · New Albany</div></div><div class="val">15:52.51</div></div><div class="list-row"><div><strong>Carter Schaubert</strong><div class='sub'>first 5k this season · Mentor</div></div><div class="val">15:53.27</div></div><div class="list-row"><div><strong>Thomas Moran</strong><div class='sub'>Sophomore · first 5k this season · Mason</div></div><div class="val">15:55.1</div></div></section><section class="block minus" id="by-the-numbers"><div id="minus-aura"><h2>BY THE NUMBERS</h2><div class="nums"><div class="numbox"><span class="n">13325</span><span class="l">athletes this 2026 season</span></div><div class="numbox"><span class="n">30</span><span class="l">2026 meets this week</span></div><div class="numbox"><span class="n">695</span><span class="l">HS schools</span></div><div class="numbox"><span class="n">43</span><span class="l">sub-16 5ks this season</span></div></div><p class="note">43 girls under 19:00 this season · 39 2026 meets.</p><h2>☁ AURA MOMENTS</h2><p class="moment"><strong>Willard Early Bird</strong> (Aug 25) — Boys HS times provisional (host said times ran fast / time corrections in process).</p></div></section></div>
   <footer class="brand-foot">
     <p class="quote">THE AURA YOU BRING TODAY IS THE LEGACY YOU LEAVE TOMORROW.</p>
-    <p class="cta">IT'S TOUGH. <span class="pink">EARN IT.</span></p>
+    <p class="cta">IT'S TOUGH. <span class="accent">EARN IT.</span></p>
     <div class="download">
       Full field (every team, every runner) lives in
       <a href="virtual_state_meet_2026-09-02.xlsx">virtual_state_meet_2026-09-02.xlsx</a>.
     </div>
     <p class="fine"><strong>2026 season-best varsity 5k.</strong> Five score, 6th and 7th
     displace. Unique athletes, fastest 5k. HS only — no middle school.
-    Data as-of 2026-09-02 18:03 UTC. Results through 2026-08-29. 186 HS schools with a 2026 5k have no OHSAA I–IV assignment and are omitted (not guessed). </p>
+    Data as-of 2026-09-02 18:34 UTC. Results through 2026-08-29. 186 HS schools with a 2026 5k have no OHSAA I–IV assignment and are omitted (not guessed). </p>
   </footer>
   <section class="boards" id="virtual-meet"><h2>VIRTUAL MEET · ALL DIVISIONS</h2><p class="lede">Current virtual championship from each athlete's best 2026 HS varsity 5k. Five score, 6th and 7th displace. HS only.</p><div class="div-block" id="d1-boys"><h3>D1 Boys · Division I Boys</h3><p>Mentor leads the Division I boys virtual meet at 126 points (scoring places 5-13-15-45-48). Ryne Reynolds of Little Miami, 12 is the virtual individual leader in 15:03.5 at Buckeye Running Sunset Invitational HS (Aug 29).</p><div class="split"><div><table><thead><tr><th>Rk</th><th>School</th><th>Score</th><th>1–5</th><th>6–7</th></tr></thead><tbody><tr><td class="num">1</td><td>Mentor</td><td class="num">126</td><td class="num">5-13-15-45-48</td><td class="num">61 / 80</td></tr><tr><td class="num">2</td><td>Gah. Lincoln</td><td class="num">157</td><td class="num">8-30-38-39-42</td><td class="num">63 / 170</td></tr><tr><td class="num">3</td><td>Mason</td><td class="num">168</td><td class="num">6-25-32-52-53</td><td class="num">120 / 126</td></tr><tr><td class="num">4</td><td>Beavercreek</td><td class="num">202</td><td class="num">11-19-28-56-88</td><td class="num">186 / 210</td></tr><tr><td class="num">5</td><td>Thom. Worthington</td><td class="num">244</td><td class="num">3-7-10-93-131</td><td class="num">177 / 248</td></tr></tbody></table></div><div><table><thead><tr><th>Pl</th><th>Time</th><th>Name</th><th>School</th><th>Gr</th><th>SB meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="num">15:03.5</td><td>Ryne Reynolds</td><td>Little Miami</td><td>12</td><td>Buckeye Running Sunset Invitational HS · Aug 29</td></tr><tr><td class="num">2</td><td class="num">15:30.1</td><td>Ian Patrick</td><td>Little Miami</td><td>11</td><td>Buckeye Running Sunset Invitational HS · Aug 29</td></tr><tr><td class="num">3</td><td class="num">15:45.98</td><td>Calvin Watson</td><td>Thom. Worthington</td><td>10</td><td>Big Walnut Eagle Twilight · Aug 29</td></tr><tr><td class="num">4</td><td class="num">15:52.51</td><td>Austin Benedict</td><td>New Albany</td><td>11</td><td>Pickerington North Classic · Aug 29</td></tr><tr><td class="num">5</td><td class="num">15:53.27</td><td>Carter Schaubert</td><td>Mentor</td><td>12</td><td>HOKA Night XC Showcase · Aug 29</td></tr></tbody></table></div></div></div><div class="div-block" id="d1-girls"><h3>D1 Girls · Division I Girls</h3><p>Upper Arlington leads the Division I girls virtual meet at 165 points (scoring places 2-11-40-42-70). Lexi Schultz of Perrysburg, 11 is the virtual individual leader in 18:14.7 at Norm Bray Invitational (Aug 29).</p><div class="split"><div><table><thead><tr><th>Rk</th><th>School</th><th>Score</th><th>1–5</th><th>6–7</th></tr></thead><tbody><tr><td class="num">1</td><td>Upper Arlington</td><td class="num">165</td><td class="num">2-11-40-42-70</td><td class="num">92 / 218</td></tr><tr><td class="num">2</td><td>Oak Hills</td><td class="num">222</td><td class="num">6-19-44-73-80</td><td class="num">84 / 182</td></tr><tr><td class="num">3</td><td>Centerville</td><td class="num">245</td><td class="num">10-30-56-62-87</td><td class="num">102 / 159</td></tr><tr><td class="num">4</td><td>Hil. Davidson</td><td class="num">256</td><td class="num">4-24-32-97-99</td><td class="num">236 / 239</td></tr><tr><td class="num">5</td><td>Mass. Jackson</td><td class="num">261</td><td class="num">16-29-38-55-123</td><td class="num">164 / 175</td></tr></tbody></table></div><div><table><thead><tr><th>Pl</th><th>Time</th><th>Name</th><th>School</th><th>Gr</th><th>SB meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="num">18:14.7</td><td>Lexi Schultz</td><td>Perrysburg</td><td>11</td><td>Norm Bray Invitational · Aug 29</td></tr><tr><td class="num">2</td><td class="num">18:22.40</td><td>Beth Baker</td><td>Upper Arlington</td><td>10</td><td>Pickerington North Classic · Aug 29</td></tr><tr><td class="num">3</td><td class="num">18:26.91</td><td>Kassadi Thompson</td><td>Cle. Heights</td><td>11</td><td>HOKA Night XC Showcase · Aug 29</td></tr><tr><td class="num">4</td><td class="num">18:35.01</td><td>Mackenzie Kline</td><td>Hil. Davidson</td><td>12</td><td>Pickerington North Classic · Aug 29</td></tr><tr><td class="num">5</td><td class="num">18:46.52</td><td>Kate Michael</td><td>Watkins Memorial</td><td>11</td><td>Big Walnut Eagle Twilight · Aug 29</td></tr></tbody></table></div></div></div><div class="div-block" id="d2-boys"><h3>D2 Boys · Division II Boys</h3><p>Hoover leads the Division II boys virtual meet at 296 points (scoring places 5-15-28-82-166). Ian Res of West Geauga, 12 is the virtual individual leader in 15:33.91 at HOKA Night XC Showcase (Aug 29).</p><div class="split"><div><table><thead><tr><th>Rk</th><th>School</th><th>Score</th><th>1–5</th><th>6–7</th></tr></thead><tbody><tr><td class="num">1</td><td>Hoover</td><td class="num">296</td><td class="num">5-15-28-82-166</td><td class="num">190 / 205</td></tr><tr><td class="num">2</td><td>Tol. St. Francis</td><td class="num">299</td><td class="num">12-18-31-100-138</td><td class="num">139 / 186</td></tr><tr><td class="num">3</td><td>Loveland</td><td class="num">325</td><td class="num">4-64-66-87-104</td><td class="num">107 / 301</td></tr><tr><td class="num">4</td><td>Bowling Green</td><td class="num">356</td><td class="num">16-25-69-86-160</td><td class="num">176 / 194</td></tr><tr><td class="num">5</td><td>Big Walnut</td><td class="num">427</td><td class="num">6-61-70-137-153</td><td class="num">167 / 173</td></tr></tbody></table></div><div><table><thead><tr><th>Pl</th><th>Time</th><th>Name</th><th>School</th><th>Gr</th><th>SB meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="num">15:33.91</td><td>Ian Res</td><td>West Geauga</td><td>12</td><td>HOKA Night XC Showcase · Aug 29</td></tr><tr><td class="num">2</td><td class="num">15:39.3</td><td>Russell Stine</td><td>Findlay</td><td>12</td><td>Norm Bray Invitational · Aug 29</td></tr><tr><td class="num">3</td><td class="num">15:43.8</td><td>Elijah Trickey</td><td>Anderson</td><td>11</td><td>Saturday Night Lights HS · Aug 29</td></tr><tr><td class="num">4</td><td class="num">15:51.7</td><td>Ian Trombley</td><td>Loveland</td><td>12</td><td>Buckeye Running Sunset Invitational HS · Aug 29</td></tr><tr><td class="num">5</td><td class="num">15:53.81</td><td>Samuel Baker</td><td>Hoover</td><td>11</td><td>HOKA Night XC Showcase · Aug 29</td></tr></tbody></table></div></div></div><div class="div-block" id="d2-girls"><h3>D2 Girls · Division II Girls</h3><p>Aurora leads the Division II girls virtual meet at 209 points (scoring places 1-8-15-68-117). Audrey Miller of Aurora, 9 is the virtual individual leader in 17:42.75 at HOKA Night XC Showcase (Aug 29).</p><div class="split"><div><table><thead><tr><th>Rk</th><th>School</th><th>Score</th><th>1–5</th><th>6–7</th></tr></thead><tbody><tr><td class="num">1</td><td>Aurora</td><td class="num">209</td><td class="num">1-8-15-68-117</td><td class="num">197 / 245</td></tr><tr><td class="num">2</td><td>Avon</td><td class="num">234</td><td class="num">21-48-52-56-57</td><td class="num">101 / 112</td></tr><tr><td class="num">3</td><td>Shaker Hts.</td><td class="num">338</td><td class="num">17-25-59-92-145</td><td class="num">154 / 168</td></tr><tr><td class="num">4</td><td>Canal Winchester</td><td class="num">400</td><td class="num">20-27-33-91-229</td><td class="num">258 / 383</td></tr><tr><td class="num">5</td><td>Brecksville</td><td class="num">425</td><td class="num">2-62-80-98-183</td><td class="num">243 / 266</td></tr></tbody></table></div><div><table><thead><tr><th>Pl</th><th>Time</th><th>Name</th><th>School</th><th>Gr</th><th>SB meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="num">17:42.75</td><td>Audrey Miller</td><td>Aurora</td><td>9</td><td>HOKA Night XC Showcase · Aug 29</td></tr><tr><td class="num">2</td><td class="num">17:46.40</td><td>Annalise Costin</td><td>Brecksville</td><td>11</td><td>HOKA Night XC Showcase · Aug 29</td></tr><tr><td class="num">3</td><td class="num">18:12.20</td><td>Maya Gonzalez</td><td>Bay</td><td>10</td><td>HOKA Night XC Showcase · Aug 29</td></tr><tr><td class="num">4</td><td class="num">18:21.17</td><td>Makayla Martuccio</td><td>Tallmadge</td><td>12</td><td>HOKA Night XC Showcase · Aug 29</td></tr><tr><td class="num">5</td><td class="num">18:33.4</td><td>Lillian (Lily) Kiser</td><td>Fremont Ross</td><td>10</td><td>Norm Bray Invitational · Aug 29</td></tr></tbody></table></div></div></div><div class="div-block" id="d3-boys"><h3>D3 Boys · Division III Boys</h3><p>Woodridge leads the Division III boys virtual meet at 126 points (scoring places 6-8-25-28-59). Jackson Spitzer of Versailles, 12 is the virtual individual leader in 15:13.3 at Bob Schul Invitational (Aug 29).</p><div class="split"><div><table><thead><tr><th>Rk</th><th>School</th><th>Score</th><th>1–5</th><th>6–7</th></tr></thead><tbody><tr><td class="num">1</td><td>Woodridge</td><td class="num">126</td><td class="num">6-8-25-28-59</td><td class="num">60 / 105</td></tr><tr><td class="num">2</td><td>Versailles</td><td class="num">315</td><td class="num">1-26-43-118-127</td><td class="num">278 / 292</td></tr><tr><td class="num">3</td><td>Chagrin Falls</td><td class="num">384</td><td class="num">9-50-54-64-207</td><td class="num">299 / 327</td></tr><tr><td class="num">4</td><td>Fairless</td><td class="num">394</td><td class="num">4-66-72-107-145</td><td class="num">220 / 246</td></tr><tr><td class="num">5</td><td>West Liberty-Salem</td><td class="num">409</td><td class="num">18-19-91-132-149</td><td class="num">189 / 267</td></tr></tbody></table></div><div><table><thead><tr><th>Pl</th><th>Time</th><th>Name</th><th>School</th><th>Gr</th><th>SB meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="num">15:13.3</td><td>Jackson Spitzer</td><td>Versailles</td><td>12</td><td>Bob Schul Invitational · Aug 29</td></tr><tr><td class="num">2</td><td class="num">15:20.73</td><td>Joel Smelcer</td><td>Perkins</td><td>12</td><td>Seneca East Tiger Classic · Aug 29</td></tr><tr><td class="num">3</td><td class="num">15:25.42</td><td>Vincent Campbell</td><td>Meadowbrook</td><td>10</td><td>Claymont Mark Albaugh Early Bird · Aug 29</td></tr><tr><td class="num">4</td><td class="num">15:26.07</td><td>Brice Fuller</td><td>Fairless</td><td>11</td><td>Pickerington North Classic · Aug 29</td></tr><tr><td class="num">5</td><td class="num">15:32.13</td><td>Cole Zang</td><td>Margaretta</td><td>11</td><td>Darin Goodman Night Invite - Eastwood HS · Aug 29</td></tr></tbody></table></div></div></div><div class="div-block" id="d3-girls"><h3>D3 Girls · Division III Girls</h3><p>Huron leads the Division III girls virtual meet at 129 points (scoring places 6-16-17-36-54). Gwen Huddle of Napoleon, 11 is the virtual individual leader in 17:38.52 at HOKA Night XC Showcase (Aug 29).</p><div class="split"><div><table><thead><tr><th>Rk</th><th>School</th><th>Score</th><th>1–5</th><th>6–7</th></tr></thead><tbody><tr><td class="num">1</td><td>Huron</td><td class="num">129</td><td class="num">6-16-17-36-54</td><td class="num">110 / 111</td></tr><tr><td class="num">2</td><td>Otsego</td><td class="num">137</td><td class="num">13-22-30-33-39</td><td class="num">45 / 84</td></tr><tr><td class="num">3</td><td>Ottawa-Glandorf</td><td class="num">239</td><td class="num">29-40-44-62-64</td><td class="num">100 / 152</td></tr><tr><td class="num">4</td><td>Minerva</td><td class="num">293</td><td class="num">19-31-41-88-114</td><td class="num">133 / 161</td></tr><tr><td class="num">5</td><td>Woodridge</td><td class="num">316</td><td class="num">8-26-51-112-119</td><td class="num">121 / 202</td></tr></tbody></table></div><div><table><thead><tr><th>Pl</th><th>Time</th><th>Name</th><th>School</th><th>Gr</th><th>SB meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="num">17:38.52</td><td>Gwen Huddle</td><td>Napoleon</td><td>11</td><td>HOKA Night XC Showcase · Aug 29</td></tr><tr><td class="num">2</td><td class="num">18:16.57</td><td>Irelyn Johnson</td><td>Marlington</td><td>12</td><td>HOKA Night XC Showcase · Aug 29</td></tr><tr><td class="num">3</td><td class="num">18:16.89</td><td>Katrina Neal</td><td>Clear Fork</td><td>—</td><td>Kipp Kinn Invitational · Aug 29</td></tr><tr><td class="num">4</td><td class="num">18:38.17</td><td>Kali Wallace</td><td>Claymont</td><td>12</td><td>Claymont Mark Albaugh Early Bird · Aug 29</td></tr><tr><td class="num">5</td><td class="num">18:47.49</td><td>Caroline Valentino</td><td>Hathaway Brown</td><td>11</td><td>HOKA Night XC Showcase · Aug 29</td></tr></tbody></table></div></div></div><div class="div-block" id="d4-boys"><h3>D4 Boys · Division IV Boys</h3><p>Tinora leads the Division IV boys virtual meet at 107 points (scoring places 9-10-12-17-59). Bennett Lehman of Ansonia, 12 is the virtual individual leader in 15:22.1 at Saturday Night Lights HS (Aug 29).</p><div class="split"><div><table><thead><tr><th>Rk</th><th>School</th><th>Score</th><th>1–5</th><th>6–7</th></tr></thead><tbody><tr><td class="num">1</td><td>Tinora</td><td class="num">107</td><td class="num">9-10-12-17-59</td><td class="num">67 / 250</td></tr><tr><td class="num">2</td><td>Russia</td><td class="num">188</td><td class="num">4-5-34-40-105</td><td class="num">158 / 183</td></tr><tr><td class="num">3</td><td>Mount Gilead</td><td class="num">197</td><td class="num">14-29-43-48-63</td><td class="num">68 / 184</td></tr><tr><td class="num">4</td><td>Maplewood</td><td class="num">268</td><td class="num">15-38-54-79-82</td><td class="num">106 / 164</td></tr><tr><td class="num">5</td><td>Hicksville</td><td class="num">366</td><td class="num">22-44-50-116-134</td><td class="num">176 / 261</td></tr></tbody></table></div><div><table><thead><tr><th>Pl</th><th>Time</th><th>Name</th><th>School</th><th>Gr</th><th>SB meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="num">15:22.1</td><td>Bennett Lehman</td><td>Ansonia</td><td>12</td><td>Saturday Night Lights HS · Aug 29</td></tr><tr><td class="num">2</td><td class="num">15:29.67</td><td>Nigel Wenger</td><td>Smithville</td><td>11</td><td>Seneca East Tiger Classic · Aug 29</td></tr><tr><td class="num">3</td><td class="num">15:46.89</td><td>Malaki Neilson</td><td>Sher. Fairview</td><td>12</td><td>Obie Mouser Defiance Early Bird · Aug 29</td></tr><tr><td class="num">4</td><td class="num">15:57.3</td><td>Samuel Philpot</td><td>Russia</td><td>12</td><td>Bob Schul Invitational · Aug 29</td></tr><tr><td class="num">5</td><td class="num">15:57.5</td><td>Paxson Bixler</td><td>Russia</td><td>10</td><td>Bob Schul Invitational · Aug 29</td></tr></tbody></table></div></div></div><div class="div-block" id="d4-girls"><h3>D4 Girls · Division IV Girls</h3><p>Liberty Center leads the Division IV girls virtual meet at 207 points (scoring places 3-16-27-66-95). Natalie Nixon of Ottawa Hills, 11 is the virtual individual leader in 18:29.7 at Darin Goodman Night Invite - Eastwood HS (Aug 29).</p><div class="split"><div><table><thead><tr><th>Rk</th><th>School</th><th>Score</th><th>1–5</th><th>6–7</th></tr></thead><tbody><tr><td class="num">1</td><td>Liberty Center</td><td class="num">207</td><td class="num">3-16-27-66-95</td><td class="num">98 / 150</td></tr><tr><td class="num">2</td><td>Rittman</td><td class="num">218</td><td class="num">13-38-40-48-79</td><td class="num">103 / 330</td></tr><tr><td class="num">3</td><td>Ottawa Hills</td><td class="num">238</td><td class="num">1-15-17-63-142</td><td class="num">143 / 198</td></tr><tr><td class="num">4</td><td>Grandview Hts.</td><td class="num">274</td><td class="num">18-43-60-73-80</td><td class="num">90 / 153</td></tr><tr><td class="num">5</td><td>Kirtland</td><td class="num">357</td><td class="num">12-52-59-67-167</td><td class="num">443 / 452</td></tr></tbody></table></div><div><table><thead><tr><th>Pl</th><th>Time</th><th>Name</th><th>School</th><th>Gr</th><th>SB meet</th></tr></thead><tbody><tr><td class="num">1</td><td class="num">18:29.7</td><td>Natalie Nixon</td><td>Ottawa Hills</td><td>11</td><td>Darin Goodman Night Invite - Eastwood HS · Aug 29</td></tr><tr><td class="num">2</td><td class="num">18:57.51</td><td>Chloe Meholovitch</td><td>Shadyside</td><td>12</td><td>OVCCL Kick Off · Aug 26</td></tr><tr><td class="num">3</td><td class="num">18:58.2</td><td>Colbie Strayer</td><td>Liberty Center</td><td>12</td><td>Darin Goodman Night Invite - Eastwood HS · Aug 29</td></tr><tr><td class="num">4</td><td class="num">19:02.14</td><td>Aubrey Ritzler</td><td>Seneca East</td><td>10</td><td>Seneca East Tiger Classic · Aug 29</td></tr><tr><td class="num">5</td><td class="num">19:08.1</td><td>Emma McCormick</td><td>Sum. Co. Day</td><td>9</td><td>Bob Schul Invitational · Aug 29</td></tr></tbody></table></div></div></div><p class="lede">Statewide virtual rankings at a glance. Division-by-division top 5 is under Virtual Meet; the complete field is in virtual_state_meet_2026-09-02.xlsx.</p><table><thead><tr><th>Board</th><th>#1 team (score)</th><th>#1 individual</th><th>Scoring teams</th></tr></thead><tbody><tr><td>D1 Boys</td><td>Mentor (126)</td><td>Ryne Reynolds 15:03.5</td><td class="num">73</td></tr><tr><td>D1 Girls</td><td>Upper Arlington (165)</td><td>Lexi Schultz 18:14.7</td><td class="num">64</td></tr><tr><td>D2 Boys</td><td>Hoover (296)</td><td>Ian Res 15:33.91</td><td class="num">131</td></tr><tr><td>D2 Girls</td><td>Aurora (209)</td><td>Audrey Miller 17:42.75</td><td class="num">117</td></tr><tr><td>D3 Boys</td><td>Woodridge (126)</td><td>Jackson Spitzer 15:13.3</td><td class="num">125</td></tr><tr><td>D3 Girls</td><td>Huron (129)</td><td>Gwen Huddle 17:38.52</td><td class="num">101</td></tr><tr><td>D4 Boys</td><td>Tinora (107)</td><td>Bennett Lehman 15:22.1</td><td class="num">109</td></tr><tr><td>D4 Girls</td><td>Liberty Center (207)</td><td>Natalie Nixon 18:29.7</td><td class="num">103</td></tr></tbody></table></section><section class="boards" id="breakout-run"><h2>BREAKOUT RUN</h2><p class="lede">First sub-16 (boys) or sub-19 (girls) this season, or a 45+ second drop on a racing 5k.</p><div class="cards"><article class="aura-card"><div class="aura-meter"><div class="aura-label">RUNNING AURA</div><div class="aura-score">750</div><div class="flames">🔥🔥🔥🔥</div></div><div class="aura-body"><p class="hed">BREAKOUT: Ryne Reynolds first sub-16 this season (15:03.5)</p><p class="who"><strong>Ryne Reynolds</strong></p><p class="mark">15:03.5 · Little Miami · gr. 12 · D1 Boys · virtual 1st · Buckeye Running Sunset Invitational HS (Aug 29)</p></div></article><article class="aura-card"><div class="aura-meter"><div class="aura-label">RUNNING AURA</div><div class="aura-score">742</div><div class="flames">🔥🔥🔥</div></div><div class="aura-body"><p class="hed">BREAKOUT: Ian Patrick first sub-16 this season (15:30.1)</p><p class="who"><strong>Ian Patrick</strong></p><p class="mark">15:30.1 · Little Miami · gr. 11 · D1 Boys · virtual 2nd · Buckeye Running Sunset Invitational HS (Aug 29)</p></div></article><article class="aura-card"><div class="aura-meter"><div class="aura-label">RUNNING AURA</div><div class="aura-score">737</div><div class="flames">🔥🔥🔥</div></div><div class="aura-body"><p class="hed">BREAKOUT: Calvin Watson first sub-16 this season (15:45.98)</p><p class="who"><strong>Calvin Watson</strong></p><p class="mark">15:45.98 · Thom. Worthington · gr. 10 · D1 Boys · virtual 3rd · Big Walnut Eagle Twilight (Aug 29)</p></div></article><article class="aura-card"><div class="aura-meter"><div class="aura-label">RUNNING AURA</div><div class="aura-score">735</div><div class="flames">🔥🔥🔥</div></div><div class="aura-body"><p class="hed">BREAKOUT: Austin Benedict first sub-16 this season (15:52.51)</p><p class="who"><strong>Austin Benedict</strong></p><p class="mark">15:52.51 · New Albany · gr. 11 · D1 Boys · virtual 4th · Pickerington North Classic (Aug 29)</p></div></article><article class="aura-card"><div class="aura-meter"><div class="aura-label">RUNNING AURA</div><div class="aura-score">734</div><div class="flames">🔥🔥🔥</div></div><div class="aura-body"><p class="hed">BREAKOUT: Carter Schaubert first sub-16 this season (15:53.27)</p><p class="who"><strong>Carter Schaubert</strong></p><p class="mark">15:53.27 · Mentor · gr. 12 · D1 Boys · virtual 5th · HOKA Night XC Showcase (Aug 29)</p></div></article><article class="aura-card"><div class="aura-meter"><div class="aura-label">RUNNING AURA</div><div class="aura-score">733</div><div class="flames">🔥🔥🔥</div></div><div class="aura-body"><p class="hed">BREAKOUT: Thomas Moran first sub-16 this season (15:55.1)</p><p class="who"><strong>Thomas Moran</strong></p><p class="mark">15:55.1 · Mason · gr. 10 · D1 Boys · virtual 6th · Moeller Primetime Invitational HS (Aug 28)</p></div></article></div></section>
   <p class="fine">RUNNING AURA is editorial, 0–999, never negative, never an official ranking. score = 400×virtual-place percentile + 250×min(1, drop-seconds/60) + 250×(division-leader-time / this-time) + 100 if the season-best is from this week. Flames: 5 at 900+, 4 at 750+, 3 at 600+, 2 at 400+, else 1. Featured runners only. Not an official OHSAA result. Times, places, and meet
