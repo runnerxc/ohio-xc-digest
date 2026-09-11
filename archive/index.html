@@ -4,11 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ohio Running Hub — XC Digest archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 <style>
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/ohio-xc-digest/assets/fonts/Oswald-Bold.ttf') format('truetype'),
+       url('assets/fonts/Oswald-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/ohio-xc-digest/assets/fonts/Montserrat-Regular.ttf') format('truetype'),
+       url('assets/fonts/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/ohio-xc-digest/assets/fonts/Montserrat-SemiBold.ttf') format('truetype'),
+       url('assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/ohio-xc-digest/assets/fonts/Montserrat-Bold.ttf') format('truetype'),
+       url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
+}
 :root {
   --hub-red: #FF2438;
   --black: #111111;
-  --red-lt: #F7F2F2;
+  --red-lt: #F3F3F5;
+  --row-odd: #F3F3F5;
   --white: #FFFFFF;
   --page: #08090B;
   --ink: #F6F6F7;
@@ -19,7 +53,7 @@ body {
   margin: 0;
   background: #ececec;
   color: var(--black);
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 .page {
   max-width: 1100px;
@@ -55,18 +89,20 @@ body {
 }
 .banner-brand .brand-name {
   margin: 0;
+  font-family: 'Oswald', 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.2;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
   font-weight: 700;
 }
 .banner-brand .series {
   margin: 5px 0 0;
+  font-family: 'Oswald', 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.2;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--hub-red);
   font-weight: 700;
@@ -107,6 +143,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-family: 'Oswald', 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -147,30 +184,43 @@ body {
   padding: 8px 24px 56px;
 }
 .section-bar {
-  background: var(--hub-red);
-  color: var(--white);
-  padding: 10px 20px;
-  border-top: 3px solid var(--black);
-  border-bottom: 3px solid var(--black);
+  background: var(--page);
+  color: var(--ink);
+  padding: 12px 18px 12px 16px;
   margin: 24px -24px 0;
+  border-left: 4px solid var(--hub-red);
+  border-bottom: 3px solid var(--hub-red);
 }
 .section-bar h2 {
   margin: 0;
+  font-family: 'Oswald', 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 16px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--ink);
+  font-weight: 700;
 }
 .subhead {
-  background: var(--black);
-  color: var(--hub-red);
-  padding: 8px 16px;
+  background: var(--page);
+  color: var(--ink);
+  padding: 10px 16px;
   margin: 18px 0 0;
+  border-radius: 2px;
 }
 .subhead h3 {
   margin: 0;
-  font-size: 14px;
+  font-family: 'Oswald', 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.tone-red {
   color: var(--hub-red);
+}
+.tone-white {
+  color: var(--ink);
 }
 .note {
   margin: 6px 4px 10px;
@@ -187,16 +237,23 @@ table.data {
   border-collapse: collapse;
   font-size: 13px;
   color: var(--black);
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 table.data th {
-  background: var(--black);
-  color: var(--hub-red);
-  padding: 8px 10px;
+  background: var(--page);
+  color: var(--muted);
+  font-family: 'Oswald', 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 10px;
   text-align: left;
   position: sticky;
   top: 0;
   z-index: 5;
-  box-shadow: 0 1px 0 var(--black);
+  border-bottom: 2px solid var(--hub-red);
+  box-shadow: none;
 }
 table.data th.num,
 table.data td.num {
@@ -209,7 +266,7 @@ table.data td.time {
   font-weight: 700;
 }
 table.data tbody tr:nth-child(odd) {
-  background: var(--red-lt);
+  background: var(--row-odd);
 }
 table.data tbody tr:nth-child(even) {
   background: var(--white);
@@ -241,11 +298,25 @@ section.meet {
   border-bottom: 1px solid #ddd;
 }
 section.meet > h2 {
-  background: var(--black);
-  color: var(--hub-red);
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Oswald', 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   padding: 12px 16px;
   margin: 0 0 8px;
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+section.meet > h2 .meet-date {
+  display: inline-block;
+  margin-left: 10px;
+  color: var(--hub-red);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  vertical-align: middle;
 }
 .meet-meta {
   margin: 0 4px 8px;
